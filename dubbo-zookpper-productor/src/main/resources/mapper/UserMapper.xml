@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xb.dao.user.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.xb.model.User" >
+    <result column="USERID" property="userid" jdbcType="VARCHAR" />
+    <result column="USERNAME" property="username" jdbcType="VARCHAR" />
+    <result column="USERPWD" property="userpwd" jdbcType="VARCHAR" />
+    <result column="USERMOBILE" property="usermobile" jdbcType="VARCHAR" />
+    <result column="userlock" property="userlock" jdbcType="INTEGER" />
+    <result column="keyone" property="keyone" jdbcType="DATE" />
+    <result column="keytow" property="keytow" jdbcType="VARCHAR" />
+    <result column="keytrhree" property="keytrhree" jdbcType="VARCHAR" />
+    <result column="loginName" property="loginname" jdbcType="VARCHAR" />
+    <result column="createtime" property="createtime" jdbcType="DATE" />
+  </resultMap>
+  <insert id="insert" parameterType="com.xb.model.User" >
+    insert into s_user (USERID, USERNAME, USERPWD, 
+      USERMOBILE, userlock, keyone, 
+      keytow, keytrhree, loginName, 
+      createtime)
+    values (#{userid,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{userpwd,jdbcType=VARCHAR}, 
+      #{usermobile,jdbcType=VARCHAR}, #{userlock,jdbcType=INTEGER}, #{keyone,jdbcType=DATE}, 
+      #{keytow,jdbcType=VARCHAR}, #{keytrhree,jdbcType=VARCHAR}, #{loginname,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xb.model.User" >
+    insert into s_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userid != null" >
+        USERID,
+      </if>
+      <if test="username != null" >
+        USERNAME,
+      </if>
+      <if test="userpwd != null" >
+        USERPWD,
+      </if>
+      <if test="usermobile != null" >
+        USERMOBILE,
+      </if>
+      <if test="userlock != null" >
+        userlock,
+      </if>
+      <if test="keyone != null" >
+        keyone,
+      </if>
+      <if test="keytow != null" >
+        keytow,
+      </if>
+      <if test="keytrhree != null" >
+        keytrhree,
+      </if>
+      <if test="loginname != null" >
+        loginName,
+      </if>
+      <if test="createtime != null" >
+        createtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userid != null" >
+        #{userid,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="userpwd != null" >
+        #{userpwd,jdbcType=VARCHAR},
+      </if>
+      <if test="usermobile != null" >
+        #{usermobile,jdbcType=VARCHAR},
+      </if>
+      <if test="userlock != null" >
+        #{userlock,jdbcType=INTEGER},
+      </if>
+      <if test="keyone != null" >
+        #{keyone,jdbcType=DATE},
+      </if>
+      <if test="keytow != null" >
+        #{keytow,jdbcType=VARCHAR},
+      </if>
+      <if test="keytrhree != null" >
+        #{keytrhree,jdbcType=VARCHAR},
+      </if>
+      <if test="loginname != null" >
+        #{loginname,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null" >
+        #{createtime,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+</mapper>

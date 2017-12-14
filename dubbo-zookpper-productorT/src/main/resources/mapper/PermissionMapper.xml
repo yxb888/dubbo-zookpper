@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xb.dao.PermissionMapper" >
+  <resultMap id="BaseResultMap" type="com.xb.model.Permission" >
+    <id column="t_id" property="tId" jdbcType="VARCHAR" />
+    <result column="t_name" property="tName" jdbcType="VARCHAR" />
+    <result column="t_text" property="tText" jdbcType="VARCHAR" />
+    <result column="t_url" property="tUrl" jdbcType="VARCHAR" />
+    <result column="t_pid" property="tPid" jdbcType="VARCHAR" />
+    <result column="t_leaf" property="tLeaf" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    t_id, t_name, t_text, t_url, t_pid, t_leaf
+  </sql>
+  <select id="selectMenuListDict" resultMap="BaseResultMap">
+	  select
+     t.t_id as "id",
+			t.t_text as "name",
+			t.t_url as "addPage",
+			t.t_pid as "pid",
+			t.t_leaf as "leaf"
+
+
+  from t_permission t where 1=1
+
+  </select>
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_permission
+    where t_id = #{tId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_permission
+    where t_id = #{tId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xb.model.Permission" >
+    insert into t_permission (t_id, t_name, t_text, 
+      t_url, t_pid, t_leaf)
+    values (#{tId,jdbcType=VARCHAR}, #{tName,jdbcType=VARCHAR}, #{tText,jdbcType=VARCHAR}, 
+      #{tUrl,jdbcType=VARCHAR}, #{tPid,jdbcType=VARCHAR}, #{tLeaf,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xb.model.Permission" >
+    insert into t_permission
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="tId != null" >
+        t_id,
+      </if>
+      <if test="tName != null" >
+        t_name,
+      </if>
+      <if test="tText != null" >
+        t_text,
+      </if>
+      <if test="tUrl != null" >
+        t_url,
+      </if>
+      <if test="tPid != null" >
+        t_pid,
+      </if>
+      <if test="tLeaf != null" >
+        t_leaf,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="tId != null" >
+        #{tId,jdbcType=VARCHAR},
+      </if>
+      <if test="tName != null" >
+        #{tName,jdbcType=VARCHAR},
+      </if>
+      <if test="tText != null" >
+        #{tText,jdbcType=VARCHAR},
+      </if>
+      <if test="tUrl != null" >
+        #{tUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="tPid != null" >
+        #{tPid,jdbcType=VARCHAR},
+      </if>
+      <if test="tLeaf != null" >
+        #{tLeaf,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xb.model.Permission" >
+    update t_permission
+    <set >
+      <if test="tName != null" >
+        t_name = #{tName,jdbcType=VARCHAR},
+      </if>
+      <if test="tText != null" >
+        t_text = #{tText,jdbcType=VARCHAR},
+      </if>
+      <if test="tUrl != null" >
+        t_url = #{tUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="tPid != null" >
+        t_pid = #{tPid,jdbcType=VARCHAR},
+      </if>
+      <if test="tLeaf != null" >
+        t_leaf = #{tLeaf,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where t_id = #{tId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xb.model.Permission" >
+    update t_permission
+    set t_name = #{tName,jdbcType=VARCHAR},
+      t_text = #{tText,jdbcType=VARCHAR},
+      t_url = #{tUrl,jdbcType=VARCHAR},
+      t_pid = #{tPid,jdbcType=VARCHAR},
+      t_leaf = #{tLeaf,jdbcType=VARCHAR}
+    where t_id = #{tId,jdbcType=VARCHAR}
+  </update>
+</mapper>

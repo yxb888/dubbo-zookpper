@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="dubbo-zookkper-productorT (1):war">
+    <output-path>$PROJECT_DIR$/dubbo-zookkper-productorT/target</output-path>
+    <root id="archive" name="dubbo-zookkper-productorT.war">
+      <element id="artifact" artifact-name="dubbo-zookkper-productorT (1):war exploded" />
+    </root>
+  </artifact>
+</component>

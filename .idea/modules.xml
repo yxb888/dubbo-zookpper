@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/dubbo-zookpper-consumer/dubbo-zookpper-consumer.iml" filepath="$PROJECT_DIR$/dubbo-zookpper-consumer/dubbo-zookpper-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dubbo-zookpper-productor/dubbo-zookpper-productor.iml" filepath="$PROJECT_DIR$/dubbo-zookpper-productor/dubbo-zookpper-productor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dubbo-zookpper-productorT/dubbo-zookpper-productorT.iml" filepath="$PROJECT_DIR$/dubbo-zookpper-productorT/dubbo-zookpper-productorT.iml" />
+    </modules>
+  </component>
+</project>
