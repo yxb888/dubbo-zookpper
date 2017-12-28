@@ -15,6 +15,15 @@ public class Permission implements Serializable{
     private String tPid;
 
     private String tLeaf;
+    private String tIcon;
+
+    public String gettIcon() {
+        return tIcon;
+    }
+
+    public void settIcon(String tIcon) {
+        this.tIcon = tIcon;
+    }
 
     public String gettId() {
         return tId;
