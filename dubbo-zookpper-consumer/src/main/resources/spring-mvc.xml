@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-xmlns:task="http://www.springframework.org/schema/task"  
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-    xmlns:context="http://www.springframework.org/schema/context"
-    xmlns:mvc="http://www.springframework.org/schema/mvc"
-    xmlns:aop="http://www.springframework.org/schema/aop"
-    xsi:schemaLocation="
+<beans xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:beans="http://java.sun.com/jsf/core" xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="
     	http://www.springframework.org/schema/aop
 		http://www.springframework.org/schema/aop/spring-aop.xsd
         http://www.springframework.org/schema/beans
@@ -15,7 +15,7 @@ xmlns:task="http://www.springframework.org/schema/task"
         http://www.springframework.org/schema/mvc 
         http://www.springframework.org/schema/mvc/spring-mvc.xsd
         http://www.springframework.org/schema/task  
-  		http://www.springframework.org/schema/task/spring-task-3.2.xsd " >
+  		http://www.springframework.org/schema/task/spring-task-3.2.xsd ">
 
     <!-- 启动自动扫描 -->
     <context:component-scan base-package="com.xb.*" />
@@ -33,7 +33,7 @@ xmlns:task="http://www.springframework.org/schema/task"
         <property name="prefix" value="/" />
         <property name="suffix" value=".jsp" />
     </bean>
-
+    <!--<beans:bean  id="cacheFilter" class="com.xb.util.CacheFilter" />-->
     
      <!--上文件上传解析-->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
@@ -80,10 +80,10 @@ xmlns:task="http://www.springframework.org/schema/task"
 <!-- 	</mvc:interceptors> -->
     
     	<!-- 	aop简洁版  记录操作信息--> 
-	    <!--<bean id="aopDemo" class="com.xb.web.aop.AopDemo" /> -->
-	    <!--<aop:config> -->
-		<!--<aop:advisor  pointcut="execution(* com.xb.service.*..*Impl.*(..))" advice-ref="aopDemo" /> -->
-	    <!--</aop:config> -->
+	    <!--<bean id="aopDemo" class="com.xb.web.aop.AopDemo" />-->
+	    <!--<aop:config>-->
+		<!--<aop:advisor  pointcut="execution(* com.xb.service.*..*Impl.*(..))" advice-ref="aopDemo" />-->
+	    <!--</aop:config>-->
 <!-- 	    <aop:config> -->
 <!--           <aop:aspect id="sec" ref="provincesAop"> -->
 <!--             <aop:pointcut id="allAddMethod" expression="execution(* com.xb.service.*..*Impl.*(..))"/> -->
