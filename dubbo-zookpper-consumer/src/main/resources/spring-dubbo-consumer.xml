@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:p="http://www.springframework.org/schema/p"
 	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
-	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns="http://www.springframework.org/schema/beans"
 	xsi:schemaLocation="
 		http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
@@ -26,4 +26,8 @@
        
      <!-- 生成远程服务代理，可以和本地bean一样使用demoService，该interface需要与服务端暴露的服务interface保持一致，该id已注入Spring -->    
    <dubbo:reference interface="com.xb.service.user.UserService" id="userService"/>
+   <dubbo:reference interface="com.xb.service.cg.CgService" id="cgService"/>
+   <dubbo:reference interface="com.xb.service.ck.SupperService" id="supperService"/>
+   <dubbo:reference interface="com.xb.service.aop.AopService" id="aopService"/>
+
 </beans>
