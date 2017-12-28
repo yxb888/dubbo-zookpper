@@ -1,5 +1,7 @@
 package com.xb.service.user;
 
+import com.xb.util.TreeNode;
+
 import java.util.List;
 import java.util.Map;
 
@@ -8,4 +10,5 @@ import java.util.Map;
  */
 public interface UserService {
     List<Map<String,Object>> selectMenuListDict();
+    List<TreeNode> selectTreeAll();
 }
